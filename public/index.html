@@ -21,7 +21,7 @@
         <input type="search" placeholder="Search for groups..."> 
       </div>
       <div class="create">
-        <label class="btn btn-primary" for="create-post">Create</label>
+        <label class="btn btn-primary" onclick="location.href='group_selection.html'">Join group</label>
         <div class="profile-photo">43</div>
       </div>
     </div>
@@ -49,26 +49,33 @@
           <span><i class="uil uil-compass"></i></span><h3>Explore</h3>
         </a>
         <a class="menu-item active" id="notifications">
-          <span><i class="uil uil-bell"><small class="notification-count">9+</small></i></span><h3>Notifications</h3>
+          <span><i class="uil uil-bell"><small class="notification-count">9+</small></i></span><h3></h3>
 
           <!-- Notifilcation popup-->
-          <div class="notifications-popup">
-            <div>
-              <div class="profile-photo">56</div>
+          <div class="popup" class="uil uil-bell" onclick="myFunction()"><h3>Notifications<h3>
+            <span class="popuptext" id="myPopup">
+            <div class="profile-photo">56</div>
               <div class="notifications-body">
                 <b>56</b> mentioned you.
                 <small class="text-muted">2 hours ago.</small>
               </div>
-            </div>
             <div>
               <div class="profile-photo">35</div>
               <div class="notifications-body">
                 <b>35</b> invited you to tangle with.
                 <small class="text-muted">5 days ago.</small>
               </div>
-            </div>
+             </div>
+            </span>
           </div>
+       
+         
+        
+
+
           <!----- End Notification popup------>
+        
+          
         </a>
         <a class="menu-item active" id="messages-notifications">
           <span><i class="uil uil-envelope-alt"><small class="notification-count">6</small></i></span><h3>Messages</h3>

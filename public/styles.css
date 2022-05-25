@@ -40,7 +40,7 @@ body {
     overflow-x: hidden;
 }
 
-// General styles
+/* General styles */
 .container {
     width: 80%;
     margin: 0 auto;
@@ -86,7 +86,7 @@ img {
 }
 
 
-// navigation bar
+/* navigation bar */
 nav {
     width: 100%;
     background: var(--color-white);
@@ -235,43 +235,62 @@ main .container .left .profile {
     padding: 1rem 0;
 }
 
-/* Notification popup */
-.left .notification-popup {
-    position: absolute;
-    top: 0;
-    left: 110%;
-    width: 30rem;
-    background: var(--color-white);
-    border-radius: var(--color-border-radius);
-    padding: var(--card-padding);
-    box-shadow: 0 0 2rem hsl(var(--color-primary), 75%, 60% 25%);
-    z-index: 8;
-    display: none;
+/*----------- Notification popup------------ */
+/* Popup container */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
 }
 
-.left .notification-popup::before {
-    content: "";
-    width: 1.2rem;
-    height: 1.2rem;
-    display: block;
-    background: red;
-    position: absolute;
-    left: -0.6rem;
-    transform: rotate(45deg);
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
 }
 
-.left .notification-popup > div {
-    display: flex;
-    align-items: start;
-    gap: 1rem;
-    margin-bottom: 1rem;
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
 }
 
-.left .notification-popup small {
-    display: block;
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
 }
 
-/*---middle----*/
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+
+
 .middle .stories {
     display: flex;
     justify-content: space-between;
@@ -594,3 +613,24 @@ main .container .right {
         display: none;
     }
 }
+
+
+.card {
+    position: relative;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+    padding: 20px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.card-container {
+  padding: 2px 16px;
+}
+

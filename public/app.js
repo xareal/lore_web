@@ -59,9 +59,11 @@ messageNotification.addEventListener('click', () => {
 
 // Sidebar
 
-// remove active class from all menu items
-const changeActiveItem = () => {
-  menuItems.forEach(item => {
-    item.classList.remove('active');
-  })
+
+// Notification
+// When the user clicks on <div>, open the popup
+// When the user clicks on <div>, open the popup
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
 }
